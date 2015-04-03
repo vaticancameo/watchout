@@ -22,3 +22,11 @@ for (var i = 0; i < nodes.length; i++) {
   .attr("fill", "blue");
 }
 
+var update = function() {
+  svg.selectAll("circle")
+    .transition().duration(1000)
+    .attr('cx',  function(){return Math.random() * svgWidth - 50 })
+    .attr('cy',  function(){return Math.random() * svgWidth - 50 });
+};
+
+setInterval(update, 1000);
